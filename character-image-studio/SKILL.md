@@ -1089,7 +1089,43 @@ Copy the image to `references/`, update `reference-urls.json`, and host the new 
 
 **1. Resolve Character and Load Reference Library** (same as above)
 
-**2. Call API (asynchronous — returns immediately):**
+**2. Build Character Description (optional but recommended):**
+
+Read `characters/{character}/character-analysis.json` and format a description:
+
+```python
+import json
+
+with open(f'characters/{character}/character-analysis.json', 'r') as f:
+    analysis = json.load(f)
+
+# Build description from analysis
+description_parts = []
+
+if 'style' in analysis:
+    description_parts.append(f"Style: {analysis['style']}")
+
+if 'body_type' in analysis:
+    description_parts.append(f"Body type: {analysis['body_type']}")
+
+if 'physical_capabilities' in analysis:
+    caps = analysis['physical_capabilities']
+    can_do = [k.replace('_', ' ') for k, v in caps.items() if v is True]
+    cannot_do = [k.replace('_', ' ') for k, v in caps.items() if v is False]
+    if can_do:
+        description_parts.append(f"Can: {', '.join(can_do)}")
+    if cannot_do:
+        description_parts.append(f"Cannot: {', '.join(cannot_do)}")
+
+if 'key_features' in analysis:
+    description_parts.append(f"Key features: {', '.join(analysis['key_features'])}")
+
+character_description = '\n'.join(description_parts)
+```
+
+This helps the API generate prompts appropriate for your character's actual capabilities (e.g., won't ask a limbless character to "cross arms").
+
+**3. Call API (asynchronous — returns immediately):**
 
 ```
 POST {API_BASE_URL}/api/v1/generate/random
@@ -1097,7 +1133,8 @@ Authorization: Bearer <access_token>
 Content-Type: application/json
 
 {
-  "reference_image_urls": ["<url1>", "<url2>", ...up to 15 from character's reference library]
+  "reference_image_urls": ["<url1>", "<url2>", ...up to 15 from character's reference library],
+  "character_description": "<optional: formatted description from step 2>"
 }
 ```
 
@@ -1111,7 +1148,7 @@ Response (returned immediately):
 }
 ```
 
-No prompt needed from the agent. The API selects a random creation mode and generates the prompt internally.
+No prompt needed from the agent. The API selects a random creation mode and uses the character description to generate an appropriate prompt internally.
 
 **Then poll and download** using the Async Polling Helper flow.
 
@@ -1188,9 +1225,10 @@ User: "Surprise me with Eyeball Man"
 You:
 1. Resolve character: "eyeball-man"
 2. Load reference URLs from `characters/eyeball-man/reference-urls.json`
-3. Call `/api/v1/generate/random` with reference URLs
-4. Poll status until completed, download
-5. Send to chat: "Here's a random Eyeball Man creation!"
+3. Read `characters/eyeball-man/character-analysis.json` and format character_description
+4. Call `/api/v1/generate/random` with reference URLs and character_description
+5. Poll status until completed, download
+6. Send to chat: "Here's a random Eyeball Man creation!"
 
 **Example 3: New Character Setup**
 
@@ -1283,7 +1321,7 @@ All generation endpoints are **asynchronous** (return immediately with `generati
 ### POST /api/v1/generate/random
 ```json
 // Request (Authorization: Bearer <access_token>)
-{"reference_image_urls": ["url1", "url2", ...]}
+{"reference_image_urls": ["url1", "url2", ...], "character_description": "optional: style, body type, capabilities"}
 // Response (immediate)
 {"status": "pending", "generation_id": "uuid", "image": null, "credits_used": 10}
 ```
