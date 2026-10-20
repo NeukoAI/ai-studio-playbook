@@ -1,0 +1,11 @@
+shot,model,seconds,price per second,takes,cost,note
+opening still,Nano Banana Pro,1,0.15,1,0.15,fal list price per image
+G*BOY turn,Kling Omni (Kling O3 Standard reference),5,0.084,1,0.42,audio off
+G*BOY turn,Seedance 2.5 Reference (480p),5,0.2205,1,1.10,
+G*BOY turn,MiniMax H3 Reference (768p),5,0.06,1,0.30,winner 13/15; resolution not logged
+G*BOY turn,Wan 3 (1080p),5,0.20,1,1.00,prompt only; fal default resolution
+G*BOY turn,Flux 3 (720p),5,0.17,1,0.85,prompt only; fal default resolution
+G*BOY turn,Grok Imagine (720p),5,0.07,1,0.35,prompt only; fal default resolution
+voiceover (45s),ElevenLabs v4,45,0.00102,4,0.18,576 characters per take
+review,checking step,,,,0.78,"7 checks for 6 clips, 4 timed out and still charged; 18% of generation"
+total,,,,,5.13,"derived: our logged recipe priced at public list prices, Oct 20 2026"

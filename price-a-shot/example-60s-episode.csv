@@ -1,0 +1,6 @@
+shot,model,seconds,price per second,takes,cost,note
+start frames (12 shots),Nano Banana 2 (2K),1,0.12,14,1.68,"example, derived: 8 stills per 7 keepers in our log, so 14 takes for 12 shots"
+video shots (12 x 5s),MiniMax H3 Reference (768p),5,0.06,36,10.80,"example, derived: 3 takes per kept shot is an assumption, see README"
+voiceover (60s),ElevenLabs v4,60,0.00102,4,0.24,"example, derived: 4 takes per kept VO in our log; 12.8 characters per second"
+review,checking step,,,,2.29,"example, derived: 18% of generation, our model-drop ratio"
+total,,,,,15.01,"example, derived: one 60-second episode, generation only"

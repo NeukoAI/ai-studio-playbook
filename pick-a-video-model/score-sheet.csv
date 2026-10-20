@@ -1,0 +1,7 @@
+model,input,on_model,motion,set,total,relative_cost,your_cost,held,broke
+MiniMax H3 Reference,prompt + frame + front view,5,3,5,13,1.0,,"On-model head to sneakers for all 5 seconds, set untouched, jagged grin.",The turn is barely a turn. Small safe motion.
+Kling Omni,prompt + first frame + front view,4,3,5,12,1.9,,"Kept our basement, palette and outfit exactly.","Froze for 3s, then a jazz-hands pose we never asked for. Grin went round."
+Seedance 2.5 Reference (480p),prompt + frame + front view,5,3,4,12,3.7,,"Best face of the six: oval eyes, horned hood, jagged grin.","Pushed into a close-up that crops out shorts and sneakers. Soft at 480p."
+Wan 3,prompt only (frame dropped),3,4,3,10,3.3,,"Cleanest full turn of the six, cape swings, red caged light kept.","Solid devil horns, angry eyes, mustard shirt. Lost the string wall."
+Grok Imagine,prompt only (frame dropped),2,4,2,8,1.2,,Smooth turn and a big readable grin.,"Bolt-on horns, orange shirt, olive shorts. Basement became a flat red void. Added a laugh."
+Flux 3,prompt only (frame dropped),2,3,2,7,2.8,,Lilac sneakers and green shorts survived.,"Head is a black blob until the hood pops in at 3s. Black jacket. Room went gray."

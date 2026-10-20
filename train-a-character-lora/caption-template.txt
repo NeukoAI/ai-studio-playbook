@@ -1,0 +1,17 @@
+CHRTOK, {view}, {pose}, {expression}, {setting}, {lighting}
+
+view:       front view | three-quarter view | side view | back view | close-up
+pose:       standing, arms at sides | arms crossed | walking | sitting on a bed | mid-jump
+expression: blank stare | wide grin | sad | surprised
+setting:    plain light-blue background | basement with CRT wall | city rooftop at night
+lighting:   flat even light | red practical light | moonlight
+
+Examples (one .txt per image, same file name as the image):
+  gboy_01.png -> gboy_01.txt
+  CHRTOK, front view, standing, arms at sides, blank stare, plain light-blue background, flat even light
+  gboy_02.png -> gboy_02.txt
+  CHRTOK, three-quarter view, looking back over shoulder, wide grin, plain light-blue background, flat even light
+
+Rule of thumb (general LoRA practice, not from Replicate's docs): caption what changes from image to image. Leave out what never changes
+(red horned hood, yellow tee, green cargo shorts, purple sneakers). The trigger
+word has to soak those up, so naming them in every caption weakens it.

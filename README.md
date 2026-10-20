@@ -1,55 +1,61 @@
-# NeukoAI Agent Skills
+# NEUKO agent skills and creator kits
 
-AI entertainment stack — give your agent superpowers to create and sustain attention.
+NEUKO is 3 people with no engineers. Our AI characters and series have passed 100M views, and this repo holds the files behind our learning series so you can copy how we work.
 
-A public skill library for AI agents. Skills provide self-contained instructions that enable agents to interact with onchain protocols and APIs.
+Each folder is one workflow. Open its `README.md` for the steps.
 
-## Available Skills
+## I want to...
 
-| Skill | Description | Status |
-|-------|-------------|--------|
-| [blowfish-launch-token](./blowfish-launch-token/) | Launch Solana tokens via the Blowfish Agent API | Active |
-| [character-image-studio](./character-image-studio/) | Manage character visual identities and generate consistent images via the NeukoAI Image Studio API | Active |
+| I want to... | Folder |
+|---|---|
+| Pick which video model to use for each kind of shot, and test new ones | [`pick-a-video-model/`](pick-a-video-model/) |
+| Run a small studio with agents, starting with 5 Claude Code skills | [`starter-skills/`](starter-skills/) |
+| Keep my character looking the same in every image | [`train-a-character-lora/`](train-a-character-lora/) |
+| Know what a shot or an episode costs before I generate it | [`price-a-shot/`](price-a-shot/) |
+| Post a story as numbered parts instead of re-uploading clips | [`numbered-parts/`](numbered-parts/) |
+| Let fans remix my character and turn their work into marketing | [`models-as-memes/`](models-as-memes/) |
 
-## Quick Start
+`models-as-memes/` links to `train-a-character-lora/` for the training step. If you copy one folder out of this repo, copy both.
 
-Point your agent at this repository to browse and install skills.
+## Install the skills into Claude Code
 
-## Skill Structure
+The folders in `starter-skills/` are Claude Code skills. The other folders are guides, templates and scripts that you open and follow.
 
-Each skill is a directory containing:
+1. Install Claude Code and sign in. To check, run `claude --version`. The setup guide is at https://code.claude.com/docs/en/setup.
+2. Clone this repo:
 
-```
-skill-name/
-├── SKILL.md              # Core skill instructions (required)
-├── references/           # Supplementary documentation (optional)
-│   ├── topic-a.md
-│   └── topic-b.md
-└── scripts/              # Executable helper scripts (optional)
-    └── helper.sh
-```
+   ```bash
+   git clone https://github.com/NeukoAI/agent-skills.git
+   cd agent-skills/starter-skills
+   ```
 
-### SKILL.md Format
+3. Copy the skills into your personal skills folder:
 
-Every `SKILL.md` includes YAML frontmatter and a markdown body:
+   ```bash
+   mkdir -p ~/.claude/skills
+   cp -R explainer-script news-post objective-report-card deeper repeat-to-skill ~/.claude/skills/
+   ```
 
-```yaml
----
-name: skill-name
-description: What this skill does and when to use it.
-metadata: {"neuko": {"emoji": "🎯", "homepage": "https://..."}}
----
-```
+4. Start or restart Claude Code with `claude`, then type `/`. You should see `/deeper`, `/explainer-script`, `/news-post`, `/objective-report-card` and `/repeat-to-skill`.
 
-The markdown body contains everything an AI agent needs to execute the skill: endpoints, authentication flows, code examples, error handling, and step-by-step workflows.
+To use a skill in one project only, copy it into that project's `.claude/skills/` folder instead. [`starter-skills/README.md`](starter-skills/README.md) has a first prompt to try for each skill.
 
-## Contributing
+## Skills we use from other people
 
-1. Fork this repository
-2. Create a directory for your skill (lowercase, hyphenated)
-3. Add a `SKILL.md` with frontmatter and complete instructions
-4. Optionally add `references/` and `scripts/` directories
-5. Submit a pull request
+We didn't write these, so we link to them instead of copying them. All are MIT licensed. Credit goes to their authors.
+
+| Skill | What it does | Author and link |
+|---|---|---|
+| `grilling` | Interviews you in rounds about a plan until nothing is left assumed | Matt Pocock, https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling |
+| `writing-for-agents` | Shows how to write a skill file that triggers at the right time | Matt Pocock, https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents |
+| `handoff` | Writes a note so a fresh session can pick up where this one stopped | Matt Pocock, https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff |
+| `unslop` | Edits writing so it stops reading as machine-written | Lauren Tan (poteto), https://github.com/cursor/plugins/tree/main/harness/pstack/claude-code/skills/unslop |
+| `sharpen` | Works out how an expert would approach the task, then does it | Lauren Tan (poteto), https://github.com/cursor/plugins/tree/main/harness/pstack/claude-code/skills/sharpen |
+| `automate-me` | Mines your recent chats and turns your habits into a personal skill | Lauren Tan (poteto), https://github.com/cursor/plugins/tree/main/harness/pstack/claude-code/skills/automate-me |
+
+## Archive
+
+Skills we no longer maintain are in [`archive/`](archive/), each with a note on why.
 
 ## License
 
