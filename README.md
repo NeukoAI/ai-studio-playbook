@@ -25,8 +25,8 @@ The folders in `starter-skills/` are Claude Code skills. The other folders are g
 2. Clone this repo:
 
    ```bash
-   git clone https://github.com/NeukoAI/agent-skills.git
-   cd agent-skills/starter-skills
+   git clone https://github.com/NeukoAI/ai-studio-playbook.git
+   cd ai-studio-playbook/starter-skills
    ```
 
 3. Copy the skills into your personal skills folder:

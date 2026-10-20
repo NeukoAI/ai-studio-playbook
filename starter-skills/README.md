@@ -9,7 +9,7 @@ Five skills we wrote at NEUKO and use to run a 3-person studio with agents. Each
 | `explainer-script` | Writes a 2-minute on-camera explainer as a beat table (what you say, what's on screen), with a fact-check list, caption and shot list | You type `/explainer-script`, or ask for an explainer script |
 | `news-post` | Turns a news story into a carousel or reel plan built on real sources, logos, footage and quotes, with credits and a caption | You type `/news-post`, or ask to turn a story into a post |
 | `objective-report-card` | Grades a piece of work against your goal, criterion by criterion, and says what it would take to get an A | You type `/objective-report-card` |
-| `deeper` | Written by Austin. Rewrites a prompt into a deeper version of the same task: what an expert would add, the raw material to start from, the tools, and a check that proves it's right | You type `/deeper`, or ask for a deeper version of a prompt |
+| `deeper` | Written by Austin, based on [a post by Felix Rieseberg](https://x.com/felixrieseberg/status/2110023283169247623). Rewrites a prompt into a deeper version of the same task: what an expert would add, the raw material to start from, the tools, and a check that proves it's right | You type `/deeper`, or ask for a deeper version of a prompt |
 | `repeat-to-skill` | Looks back over your week, finds tasks you did more than once, and writes the approved ones as new skills | You type `/repeat-to-skill` |
 
 `objective-report-card` and `repeat-to-skill` only run when you type them. The other three can also start on their own when your request matches.
