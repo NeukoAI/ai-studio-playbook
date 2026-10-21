@@ -9,7 +9,7 @@ Five skills we wrote at NEUKO and use to run a 3-person studio with agents. Each
 | `explainer-script` | Writes a 2-minute on-camera explainer as a beat table (what you say, what's on screen), with a fact-check list, caption and shot list | You type `/explainer-script`, or ask for an explainer script |
 | `news-post` | Turns a news story into a carousel or reel plan built on real sources, logos, footage and quotes, with credits and a caption | You type `/news-post`, or ask to turn a story into a post |
 | `objective-report-card` | Grades a piece of work against your goal, criterion by criterion, and says what it would take to get an A | You type `/objective-report-card` |
-| `deeper` | Written by Austin, based on [a post by Felix Rieseberg](https://x.com/felixrieseberg/status/2110023283169247623). Rewrites a prompt into a deeper version of the same task: what an expert would add, the raw material to start from, the tools, and a check that proves it's right | You type `/deeper`, or ask for a deeper version of a prompt |
+| `deeper` | Written by Austin, based on Felix Rieseberg's post [How to be more ambitious](https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/) ([X thread](https://x.com/felixrieseberg/status/2110023283169247623)). Rewrites a prompt into a deeper version of the same task: what an expert would add, the raw material to start from, the tools, and a check that proves it's right | You type `/deeper`, or ask for a deeper version of a prompt |
 | `repeat-to-skill` | Looks back over your week, finds tasks you did more than once, and writes the approved ones as new skills | You type `/repeat-to-skill` |
 
 `objective-report-card` and `repeat-to-skill` only run when you type them. The other three can also start on their own when your request matches.
@@ -47,6 +47,25 @@ Five skills we wrote at NEUKO and use to run a 3-person studio with agents. Each
 You should see `/deeper`, `/explainer-script`, `/news-post`, `/objective-report-card` and `/repeat-to-skill`. If they're missing, check that each file sits at `~/.claude/skills/<name>/SKILL.md`, one level deep.
 
 To use a skill in one project only, copy it into that project's `.claude/skills/` folder instead.
+
+### Codex
+
+Codex reads personal skills from `~/.agents/skills`. Copy them there instead:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R explainer-script news-post objective-report-card deeper repeat-to-skill ~/.agents/skills/
+```
+
+Restart Codex, then type `$deeper` or run `/skills` to check.
+
+### Or let your agent install one
+
+Paste this into Claude Code or Codex:
+
+```
+Install the deeper skill. Download https://raw.githubusercontent.com/NeukoAI/ai-studio-playbook/main/starter-skills/deeper/SKILL.md and save it as deeper/SKILL.md in my personal skills folder: ~/.claude/skills if you are Claude Code, ~/.agents/skills if you are Codex. Then tell me how to run it.
+```
 
 ## First prompts to try
 
