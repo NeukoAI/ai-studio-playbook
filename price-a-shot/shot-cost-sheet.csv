@@ -1,0 +1,7 @@
+shot,model,seconds,price per second,takes,cost,note
+start frames (12 shots),Nano Banana 2 (2K),1,0.12,14,=C2*D2*E2,a still: put 1 in seconds and the per-image price in price per second
+video shots (12 x 5s),MiniMax H3 Reference (768p),5,0.06,36,=C3*D3*E3,takes = shots x takes per kept shot
+voiceover (60s),ElevenLabs v4,60,0.00102,4,=C4*D4*E4,$0.08 per 1K characters x your characters per second
+add new shots above this row (leave it blank),,,,,,rows inserted above here are counted in review and total
+review,your checking step,,,,"=ROUND(SUM(F2:F5)*0.18,2)",18% of generation; replace with your own rate
+total,,,,,=SUM(F2:F6),

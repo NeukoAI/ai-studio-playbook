@@ -1,0 +1,15 @@
+{
+  "destination": "YOUR_USERNAME/YOUR_CHARACTER-lora",
+  "input": {
+    "input_images": "https://YOUR-HOST/YOUR_CHARACTER-dataset.zip",
+    "trigger_word": "CHRTOK",
+    "autocaption": false,
+    "steps": 1000,
+    "learning_rate": 0.0004,
+    "batch_size": 1,
+    "resolution": "512,768,1024",
+    "lora_rank": 16,
+    "caption_dropout_rate": 0.05,
+    "optimizer": "adamw8bit"
+  }
+}

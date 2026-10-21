@@ -1,0 +1,9 @@
+{
+  "destination": "YOUR_USERNAME/YOUR_CHARACTER-lora",
+  "input": {
+    "input_images": "https://YOUR-HOST/YOUR_CHARACTER-dataset.zip",
+    "trigger_word": "CHRTOK",
+    "training_steps": 1000,
+    "lora_type": "subject"
+  }
+}
